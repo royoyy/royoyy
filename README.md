@@ -16,3 +16,4 @@ Here are some ideas to get you started:
 -->
 - 🌱 I’m currently learning Go
 - 😄 Pronouns: he/him
+- ⚡ Fun fact: there is no fun fact
