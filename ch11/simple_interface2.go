@@ -4,41 +4,46 @@ import "fmt"
 
 type Simpler interface {
 	Get() int
-	Put(int)
+	Set(int)
 }
 type Simple struct {
 	i int
-}
-type RSimple struct {
-	ri int
 }
 
 func (p *Simple) Get() int {
 	return p.i
 }
-func (p *Simple) Put(u int) {
+func (p *Simple) Set(u int) {
 	p.i = u
 }
 
-func (rp *RSimple) Get() int {
-	return rp.ri
+type RSimple struct {
+	i int
+	j int
 }
-func (rp *RSimple) Put(ru int) {
-	rp.ri = ru
+
+func (p *RSimple) Get() int {
+	return p.j
 }
-func fI(s Simpler) {
-	switch s.(type) {
+func (p *RSimple) Set(u int) {
+	p.j = u
+}
+func fI(it Simpler) int {
+	switch it.(type) {
 	case *Simple:
-		fmt.Println("Simple")
+		it.Set(5)
+		return it.Get()
 	case *RSimple:
-		fmt.Println("RSimple")
-	case nil:
-		fmt.Println("nil")
+		it.Set(50)
+		return it.Get()
 	default:
-		fmt.Println("unexpected")
+		return 99
 	}
+	return 0
 }
 func main() {
-	s := &Simple{1}
-	fI(s)
+	var s Simple
+	fmt.Println(fI(&s))
+	var r RSimple
+	fmt.Println(fI(&r))
 }

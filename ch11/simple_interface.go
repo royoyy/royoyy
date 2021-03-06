@@ -4,24 +4,23 @@ import "fmt"
 
 type Simpler interface {
 	Get() int
-	Set(n int)
+	Set(int)
 }
 type Simple struct {
-	n int
+	i int
 }
 
-func (s Simple) Get() int {
-	return s.n
+func (p *Simple) Get() int {
+	return p.i
 }
-func (s *Simple) Set(n int) {
-	s.n = n
+func (p *Simple) Set(u int) {
+	p.i = u
 }
-func testSimpler(s Simpler) {
-	s.Set(2)
-	fmt.Println("Get():", s.Get())
+func fI(it Simpler) int {
+	it.Set(5)
+	return it.Get()
 }
 func main() {
-	s := &Simple{1}
-	fmt.Println(s)
-	testSimpler(s)
+	var s Simple
+	fmt.Println(fI(&s))
 }
