@@ -2,13 +2,15 @@ package main
 
 import "fmt"
 
-type Square struct {
-	side float32
-}
 type Triangle struct {
 	base   float32
 	height float32
 }
+
+func (tr *Triangle) Area() float32 {
+	return 0.5 * tr.base * tr.height
+}
+
 type AreaInterface interface {
 	Area() float32
 }
@@ -16,6 +18,16 @@ type PeriInterface interface {
 	Perimeter() float32
 }
 
+type Square struct {
+	side float32
+}
+
+func (sq *Square) Perimeter() float32 {
+	return 4 * sq.side
+}
+func (sq *Square) Area() float32 {
+	return sq.side * sq.side
+}
 func main() {
 	var areaIntf AreaInterface
 	var periIntf PeriInterface
@@ -30,14 +42,4 @@ func main() {
 	fmt.Printf("The square has perimeter: %f\n", periIntf.Perimeter())
 	areaIntf = tr1
 	fmt.Printf("The triangle has area: %f\n", areaIntf.Area())
-}
-
-func (sq *Square) Area() float32 {
-	return sq.side * sq.side
-}
-func (sq *Square) Perimeter() float32 {
-	return 4 * sq.side
-}
-func (tr *Triangle) Area() float32 {
-	return 0.5 * tr.base * tr.height
 }
