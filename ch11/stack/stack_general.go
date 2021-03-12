@@ -1,6 +1,6 @@
 package stack
 
-import "error"
+import "errors"
 
 type Stack []interface{}
 
@@ -28,6 +28,6 @@ func (st *Stack) Pop() (interface{}, error) {
 		return nil, errors.New("stack is empty")
 	}
 	top := stk[len(stk)-1]
-	*stack = stk[:len(stk)-1] // shrink the stack
+	*st = stk[:len(stk)-1] // shrink the stack
 	return top, nil
 }
