@@ -7,13 +7,13 @@ type Miner interface {
 }
 
 func Min(data Miner) interface{} {
-	min := data.ElemIx(0)
+	min := 0
 	for i := 1; i < data.Len(); i++ {
-		if data.Less(i, i-1) {
-			min = data.ElemIx(i)
+		if data.Less(i, min) {
+			min = i
 		}
 	}
-	return min
+	return data.ElemIx(min)
 }
 
 type IntArray []int

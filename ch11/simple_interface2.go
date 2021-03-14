@@ -43,7 +43,7 @@ func fI(it Simpler) int {
 }
 func main() {
 	var s Simple
-	fmt.Println(fI(&s))
+	fmt.Println(fI(&s), "setted at Simple")
 	var r RSimple
-	fmt.Println(fI(&r))
+	fmt.Println(fI(&r), "setted at RSimple")
 }

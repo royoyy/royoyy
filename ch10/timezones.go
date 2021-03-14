@@ -24,7 +24,6 @@ func (tz TZ) String() string {
 	return ""
 }
 func main() {
-	fmt.Printf("%T\n", 0*HOUR)
 	fmt.Println(EST)
 	fmt.Println(0 * HOUR)
 	fmt.Println(-6 * HOUR)

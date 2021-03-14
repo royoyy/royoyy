@@ -27,6 +27,6 @@ func gI(any interface{}) int {
 	return 0 // default value
 }
 func main() {
-	s := &Simple{1}
-	fmt.Println(gI(s))
+	s := &Simple{5}
+	fmt.Println(gI(s), "setted")
 }

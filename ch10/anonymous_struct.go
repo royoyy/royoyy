@@ -10,6 +10,7 @@ type S struct {
 
 func main() {
 	s := &S{1.5, 1, "a string"}
+	fmt.Println(s.f)
 	fmt.Println(s.int)
 	fmt.Println(s.string)
 }

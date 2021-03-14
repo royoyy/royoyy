@@ -22,5 +22,5 @@ func fI(it Simpler) int {
 }
 func main() {
 	var s Simple
-	fmt.Println(fI(&s))
+	fmt.Println(fI(&s), "setted")
 }

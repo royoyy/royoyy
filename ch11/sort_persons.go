@@ -23,7 +23,7 @@ func main() {
 	p2 := Person{"Donald", "Trump"}
 	p3 := Person{"Joe", "Biden"}
 	arrP := Persons{p1, p2, p3}
-	fmt.Println("Before sorting:", arrP)
+	fmt.Println("Before sorting:\n", arrP)
 	sort.Sort(arrP)
-	fmt.Println("After sorting:", arrP)
+	fmt.Println("After sorting:\n", arrP)
 }

@@ -26,7 +26,7 @@ type Mercedes struct {
 }
 
 func (m Mercedes) sayHi() {
-	fmt.Println("Hi")
+	fmt.Println("Hi, Mercedes")
 }
 func main() {
 	m := &Mercedes{Car{4, nil}}
