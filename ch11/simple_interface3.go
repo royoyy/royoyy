@@ -20,11 +20,10 @@ func (p *Simple) Put(u int) {
 type Any interface{}
 
 func gI(any interface{}) int {
-	// return any.(Simpler).Get()   // unsafe, runtime panic possible
 	if v, ok := any.(Simpler); ok {
 		return v.Get()
 	}
-	return 0 // default value
+	return 0
 }
 func main() {
 	s := &Simple{5}
